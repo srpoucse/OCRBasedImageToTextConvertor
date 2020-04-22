@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ISK-ii-ovf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,17 +7,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Scanner-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageToTextConvertor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Scanner" customClass="ViewController" customModule="ImageToTextConvertor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e0x-HX-aLQ">
-                                <rect key="frame" x="20" y="144" width="374" height="611"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="20" y="144" width="374" height="562"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence = " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFr-yk-aV2">
-                                <rect key="frame" x="20" y="785" width="374" height="57"/>
+                                <rect key="frame" x="20" y="736" width="374" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="0L4-NU-RFC"/>
                                 </constraints>
@@ -59,6 +59,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Scan" id="hYn-at-50S"/>
                     <connections>
                         <outlet property="confidenceLabel" destination="oFr-yk-aV2" id="unC-sb-ciW"/>
                         <outlet property="textview" destination="e0x-HX-aLQ" id="7Mk-v0-tME"/>
@@ -66,7 +67,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42.028985507246382" y="87.723214285714278"/>
+            <point key="canvasLocation" x="19" y="381"/>
+        </scene>
+        <!--Scanner-->
+        <scene sceneID="29v-LE-DTd">
+            <objects>
+                <viewController id="egQ-6p-I7X" userLabel="Scanner" customClass="UploadViewController" customModule="ImageToTextConvertor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hC1-CW-s3F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gev-Qz-Pfl">
+                                <rect key="frame" x="20" y="144" width="374" height="562"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emy-wf-pp7">
+                                <rect key="frame" x="32" y="64" width="348" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="9w0-DM-onX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadClickedWithSender:" destination="egQ-6p-I7X" eventType="touchUpInside" id="3pO-Cv-LmA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence = " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0F-CK-xVW">
+                                <rect key="frame" x="20" y="736" width="374" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="c3L-JZ-Hhb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lce-dj-ij1">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lce-dj-ij1" firstAttribute="centerX" secondItem="hC1-CW-s3F" secondAttribute="centerX" id="B0s-gA-E7W"/>
+                            <constraint firstItem="GWq-sc-N2j" firstAttribute="bottom" secondItem="b0F-CK-xVW" secondAttribute="bottom" constant="20" id="Cnx-RC-qtS"/>
+                            <constraint firstItem="b0F-CK-xVW" firstAttribute="leading" secondItem="GWq-sc-N2j" secondAttribute="leading" constant="20" id="E05-SP-6Mi"/>
+                            <constraint firstItem="GWq-sc-N2j" firstAttribute="trailing" secondItem="Emy-wf-pp7" secondAttribute="trailing" constant="34" id="I7P-cp-M2Z"/>
+                            <constraint firstItem="Emy-wf-pp7" firstAttribute="leading" secondItem="GWq-sc-N2j" secondAttribute="leading" constant="32" id="QbS-vv-gbW"/>
+                            <constraint firstItem="gev-Qz-Pfl" firstAttribute="top" secondItem="Emy-wf-pp7" secondAttribute="bottom" constant="16" id="Ydv-3G-YKO"/>
+                            <constraint firstItem="gev-Qz-Pfl" firstAttribute="leading" secondItem="GWq-sc-N2j" secondAttribute="leading" constant="20" id="gTy-Ii-F9g"/>
+                            <constraint firstItem="GWq-sc-N2j" firstAttribute="bottom" secondItem="b0F-CK-xVW" secondAttribute="bottom" constant="20" id="gbR-lc-fzA"/>
+                            <constraint firstItem="Emy-wf-pp7" firstAttribute="top" secondItem="GWq-sc-N2j" secondAttribute="top" constant="20" id="gjR-fg-p1K"/>
+                            <constraint firstItem="GWq-sc-N2j" firstAttribute="trailing" secondItem="gev-Qz-Pfl" secondAttribute="trailing" constant="20" id="jmD-2n-qFT"/>
+                            <constraint firstItem="lce-dj-ij1" firstAttribute="centerY" secondItem="hC1-CW-s3F" secondAttribute="centerY" id="mc6-Kg-zJp"/>
+                            <constraint firstItem="GWq-sc-N2j" firstAttribute="trailing" secondItem="b0F-CK-xVW" secondAttribute="trailing" constant="20" id="wXS-X2-Yut"/>
+                            <constraint firstItem="b0F-CK-xVW" firstAttribute="top" secondItem="gev-Qz-Pfl" secondAttribute="bottom" constant="30" id="yTQ-OS-Yz3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GWq-sc-N2j"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" id="gQx-89-52k"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="lce-dj-ij1" id="NPN-I8-9M8"/>
+                        <outlet property="confidenceLabel" destination="b0F-CK-xVW" id="pfd-Lq-fPP"/>
+                        <outlet property="textview" destination="gev-Qz-Pfl" id="5ZY-jH-H7W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QU9-X0-B0D" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="1227.4553571428571"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ETc-b6-bci">
+            <objects>
+                <tabBarController id="ISK-ii-ovf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MlI-j1-fTS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="TKs-G9-X5l"/>
+                        <segue destination="egQ-6p-I7X" kind="relationship" relationship="viewControllers" id="VQq-G6-JY7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRx-Vu-C14" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-888" y="931"/>
         </scene>
     </scenes>
 </document>

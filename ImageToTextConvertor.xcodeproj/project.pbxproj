@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56008F742450D56C0022D4AC /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56008F732450D56C0022D4AC /* UploadViewController.swift */; };
 		561257BE2450A7D6003DA86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561257BD2450A7D6003DA86F /* AppDelegate.swift */; };
 		561257C02450A7D6003DA86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561257BF2450A7D6003DA86F /* SceneDelegate.swift */; };
 		561257C22450A7D6003DA86F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561257C12450A7D6003DA86F /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56008F732450D56C0022D4AC /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		561257BA2450A7D6003DA86F /* ImageToTextConvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToTextConvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		561257BD2450A7D6003DA86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		561257BF2450A7D6003DA86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				561257C82450A7D7003DA86F /* LaunchScreen.storyboard */,
 				561257CB2450A7D7003DA86F /* Info.plist */,
 				561257D12450A8C8003DA86F /* ImageToTextConvertor.swift */,
+				56008F732450D56C0022D4AC /* UploadViewController.swift */,
 			);
 			path = ImageToTextConvertor;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				561257C22450A7D6003DA86F /* ViewController.swift in Sources */,
+				56008F742450D56C0022D4AC /* UploadViewController.swift in Sources */,
 				561257BE2450A7D6003DA86F /* AppDelegate.swift in Sources */,
 				561257D22450A8C8003DA86F /* ImageToTextConvertor.swift in Sources */,
 				561257C02450A7D6003DA86F /* SceneDelegate.swift in Sources */,

@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         self.convertor.convert(using: self) { (text, confidence) in
             DispatchQueue.main.async {
                 self.textview.text = text
-                self.confidenceLabel.text = "Confidence = " + String(confidence)
+                self.confidenceLabel.text = "Confidence = " + String(ceil(confidence * 100)) + "%"
             }
         }
     }
