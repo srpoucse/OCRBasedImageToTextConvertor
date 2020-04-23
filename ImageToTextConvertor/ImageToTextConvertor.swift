@@ -24,6 +24,16 @@ import VisionKit
         setupTextRecognitionRequest()
     }
     
+    func convert(pdfAtUrl: URL, completionHandler: @escaping T)  {
+        self.completionHandler = completionHandler
+        guard let cgImage = try? convertPDF(at: pdfAtUrl).first else {
+            completionHandler("Failed converting PDF to text.", 0.0)
+            return
+        }
+        let image = UIImage.init(cgImage: cgImage)
+        processImage(image)
+    }
+    
     func convert(using image: UIImage, completionHandler: @escaping T)  {
         self.completionHandler = completionHandler
         processImage(image)
@@ -111,4 +121,34 @@ extension ImageToTextConvertor: VNDocumentCameraViewControllerDelegate {
         controller.dismiss(animated: true)
     }
     
+}
+
+extension ImageToTextConvertor {
+    func convertPDF(at sourceURL: URL, dpi: CGFloat = 200) throws -> [CGImage] {
+           let pdfDocument = CGPDFDocument(sourceURL as CFURL)!
+           let colorSpace = CGColorSpaceCreateDeviceRGB()
+           let bitmapInfo = CGImageAlphaInfo.noneSkipLast.rawValue
+           var imgs = [CGImage]()
+           
+           DispatchQueue.concurrentPerform(iterations: pdfDocument.numberOfPages) { i in
+               // Page number starts at 1, not 0
+               let pdfPage = pdfDocument.page(at: i + 1)!
+
+               let mediaBoxRect = pdfPage.getBoxRect(.mediaBox)
+               let scale = dpi / 72.0
+               let width = Int(mediaBoxRect.width * scale)
+               let height = Int(mediaBoxRect.height * scale)
+
+               let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo)!
+               context.interpolationQuality = .high
+               context.setFillColor(UIColor.white.cgColor)
+               context.fill(CGRect(x: 0, y: 0, width: width, height: height))
+               context.scaleBy(x: scale, y: scale)
+               context.drawPDFPage(pdfPage)
+
+               let image = context.makeImage()!
+               imgs.append(image)
+           }
+           return imgs
+       }
 }
