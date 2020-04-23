@@ -5,7 +5,7 @@ An OCR based Image to Text Convertor that can be used in any iOS App. It support
 
 # 1 - Snap an Image and convert to text
     let convertor: ImageToTextConvertor = ImageToTextConvertor()
-    self.convertor.convert(using: self) { (text, confidence) in
+    convertor.convert(using: self) { (text, confidence) in
            
     }
     
