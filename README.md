@@ -13,3 +13,6 @@ An OCR based Image to Text Convertor that can be used in any iOS App. It support
     let convertor: ImageToTextConvertor = ImageToTextConvertor()
     convertor.convert(pdfAtUrl: url) { (text, confidence) in
     }
+
+# Demo Video
+![](https://github.com/srpoucse/OCRBasedImageToTextConvertor/blob/master/Demo.gif)
